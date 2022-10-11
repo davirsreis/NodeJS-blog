@@ -15,6 +15,7 @@ const Categorie = mongoose.model('categories')
 const users = require('./routes/user')
 const passport = require('passport')
 require('./config/auth')(passport)
+const db = require('./config/db')
 
 // Configurações
 
@@ -51,7 +52,7 @@ runtimeOptions: {
 app.set('view engine', 'handlebars')
 
 // Mongoose
-mongoose.connect('mongodb://localhost/blogapp').then(() => {
+mongoose.connect(db.mongoURI).then(() => {
     console.log('Conectado com sucesso!');
 }).catch((err) => {
     console.log('Não foi possível se conectar! erro: ' + err);
@@ -132,7 +133,7 @@ app.use('/admin', admin)
 app.use('/users', users)
 
 // Outros
-const PORT = 8080
+const PORT =  process.env.PORT || 8080
 app.listen(PORT,() => {
     console.log("Servidor rodando!");
 })
