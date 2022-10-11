@@ -1,0 +1,15 @@
+
+    <div class="card-body">
+        <h1>Categorias: </h1>
+        <ul class="list-group">
+            {{#each categories}}
+            <li class="list-group-item">
+                <a href="/categories/{{slug}}" class="text-decoration-none"><h5>{{nome}}</h5></a>
+            </li>
+            {{else}}
+                <h5>Nenhuma categoria registrada</h5>
+            {{/each}}
+        </ul>  
+
+    </div>
+

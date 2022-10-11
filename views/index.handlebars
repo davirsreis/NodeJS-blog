@@ -1,0 +1,27 @@
+<div class="bg-light p-5 rounded-lg">
+    <h1 class="display-4">Sobre direito</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+</div>
+
+<hr class="my-4">
+
+<h2>Publicações recentes</h2>
+
+{{#each posts}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <p>{{description}}</p>
+        <a href="/post/{{slug}}"><button class="btn btn-primary">Leia mais</button></a>
+        <hr>
+        <small>Categoria: {{categorie.nome}}</small><br>
+        <small>Data de publicação: {{date}}</small>
+    </div>
+</div>
+<br>
+
+{{else}}
+    <h5>Nenhuma publicação</h5>
+{{/each}}

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img src="https://seeklogo.com/images/S/simbolo-de-direito-logo-52D04CB959-seeklogo.com.png" alt="logo" width="40px" height="40px" class="img-thumbnail"></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/categories">Categorias</a>
+        </li>
+        {{#if user.eAdmin}}
+          <li class="nav-item">
+              <a class="nav-link" href="/admin">Painel administrativo</a>
+          </li>
+        {{/if}}
+
+      </ul>
+
+      {{#if user}}
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <span class="navbar-text">Seja Bem-Vindo(a), {{user.nome}}!</span>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/users/logout">Deslogar</a>
+        </li>
+      </ul>
+      {{else}}
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/users/login">Entrar</a>
+        </li>
+      </ul>
+      {{/if}}
+    </div>
+  </div>
+</nav>
