@@ -98,7 +98,7 @@ app.get('/post/:slug', (req,res) => {
 })
 
 app.get('/categories', (req,res) => {
-    Categorie.find().then((categories) => {
+    Categorie.find().sort({date:'desc'}).then((categories) => {
         res.render('categories/index', {categories: categories})
     }).catch((err) => {
         req.flash('error_msg', 'Houve um erro ao listar as categorias')
