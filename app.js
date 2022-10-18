@@ -1,4 +1,5 @@
 // Carregando módulos
+require("dotenv").config();
 const express = require('express')
 const { engine } = require('express-handlebars');
 const bodyParser = require('body-parser')
@@ -16,11 +17,13 @@ const users = require('./routes/user')
 const passport = require('passport')
 require('./config/auth')(passport)
 //const db = require("./config/db")
-const aws = require('aws-sdk');
+// const aws = require('aws-sdk');
 
-let config = new aws.Config({
-  accessKey: process.env.mongoURI
-});
+const mongoURI = process.env.accessKey
+
+// let config = new aws.Config({
+//   accessKey: process.env.mongoURI
+// });
 
 // Configurações
 
@@ -57,7 +60,7 @@ runtimeOptions: {
 app.set('view engine', 'handlebars')
 
 // Mongoose
-mongoose.connect(config.accessKey).then(() => {
+mongoose.connect(mongoURI).then(() => {
     console.log('Conectado com sucesso!');
 }).catch((err) => {
     console.log('Não foi possível se conectar! erro: ' + err);
@@ -140,6 +143,6 @@ app.use('/users', users)
 // Outros
 const PORT =  process.env.PORT || 8080
 app.listen(PORT,() => {
-    console.log(config.accessKey);
+    console.log(mongoURI);
     console.log("Servidor rodando!");
 })
