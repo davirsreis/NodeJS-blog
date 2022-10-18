@@ -57,8 +57,7 @@ runtimeOptions: {
 app.set('view engine', 'handlebars')
 
 // Mongoose
-mongoose.connect(config.accessKey).then(() => {
-    console.log(config.accessKey);
+mongoose.connect(config['accessKey']).then(() => {
     console.log('Conectado com sucesso!');
 }).catch((err) => {
     console.log('Não foi possível se conectar! erro: ' + err);
@@ -141,6 +140,6 @@ app.use('/users', users)
 // Outros
 const PORT =  process.env.PORT || 8080
 app.listen(PORT,() => {
-    console.log(config.accessKey);
+    console.log(config['accessKey']);
     console.log("Servidor rodando!");
 })
