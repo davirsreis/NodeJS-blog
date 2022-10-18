@@ -1,5 +1,8 @@
+# node
 node_modules
 
+# conexões
 config/db.js
 
+# Variáveis de ambiente
 .env

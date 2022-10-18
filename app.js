@@ -17,15 +17,11 @@ const users = require('./routes/user')
 const passport = require('passport')
 require('./config/auth')(passport)
 //const db = require("./config/db")
-// const aws = require('aws-sdk');
-
-const mongoURI = process.env.accessKey
-
-// let config = new aws.Config({
-//   accessKey: process.env.mongoURI
-// });
 
 // Configurações
+
+// Variáveis de ambiente
+const mongoURI = process.env.accessKey
 
 // Sessão
 app.use(session({
@@ -143,6 +139,5 @@ app.use('/users', users)
 // Outros
 const PORT =  process.env.PORT || 8080
 app.listen(PORT,() => {
-    console.log(mongoURI);
     console.log("Servidor rodando!");
 })
