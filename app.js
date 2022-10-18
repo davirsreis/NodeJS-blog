@@ -15,7 +15,7 @@ const Categorie = mongoose.model('categories')
 const users = require('./routes/user')
 const passport = require('passport')
 require('./config/auth')(passport)
-const db = require("./config/db")
+//const db = require("./config/db")
 
 // Configurações
 
@@ -52,7 +52,7 @@ runtimeOptions: {
 app.set('view engine', 'handlebars')
 
 // Mongoose
-mongoose.connect(db.mongoURI).then(() => {
+mongoose.connect(mongoURI).then(() => {
     console.log('Conectado com sucesso!');
 }).catch((err) => {
     console.log('Não foi possível se conectar! erro: ' + err);
