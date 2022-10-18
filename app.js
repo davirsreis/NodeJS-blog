@@ -18,7 +18,7 @@ require('./config/auth')(passport)
 //const db = require("./config/db")
 const aws = require('aws-sdk');
 
-let config = new aws.S3({
+let config = new aws.Config({
   accessKey: process.env.mongoURI
 });
 
@@ -58,6 +58,7 @@ app.set('view engine', 'handlebars')
 
 // Mongoose
 mongoose.connect(config.accessKey).then(() => {
+    console.log(config.accessKey);
     console.log('Conectado com sucesso!');
 }).catch((err) => {
     console.log('Não foi possível se conectar! erro: ' + err);
