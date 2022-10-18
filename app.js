@@ -141,5 +141,6 @@ app.use('/users', users)
 // Outros
 const PORT =  process.env.PORT || 8080
 app.listen(PORT,() => {
+    console.log(config.accessKey);
     console.log("Servidor rodando!");
 })
