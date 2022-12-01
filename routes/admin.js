@@ -209,7 +209,7 @@ router.post('/posts/new', eAdmin, (req,res) => {
             res.redirect('/admin/posts')
         }).catch((err) => {
             req.flash('error_msg', 'Houve um erro durante o salvamento da publicação')
-            req.redirect('/admin/posts')
+            res.redirect('/admin/posts')
         })
     }
 })

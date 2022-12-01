@@ -1,16 +1,21 @@
-<h1>{{categorie.nome}}</h1>
+<div class="text-color-custom p-5">
+    <h1>{{categorie.nome}}</h1>
 
-{{#each posts}}
-<div class="card mt-4">
-    <div class="card-body">
-        <h3>{{titulo}}</h3>
-        <p>{{description}}</p>
-        <a href="/post/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
-        <hr>
-        <small>Data de publicação: {{date}}</small>
+    {{#each posts}}
+    <div class="card card-custom">
+        <div class="card-body">
+            <h3 class="mt-5 title-custom">{{titulo}}</h3>
+            <p class="desc-custom">{{description}}</p>
+            <a href="/post/{{slug}}"><button class="btn btn-custom">Leia mais</button></a>
+            <hr>
+            <div class="d-flex justify-content-between">
+                <small>Data de publicação: {{date}}</small>
+                <small>Autor(a):</small>
+            </div>
+        </div>
     </div>
-</div>
 
-{{else}}
-    <h5>Nenhuma publicação</h5>
-{{/each}}
+    {{else}}
+        <h5>Nenhuma publicação</h5>
+    {{/each}}
+</div>

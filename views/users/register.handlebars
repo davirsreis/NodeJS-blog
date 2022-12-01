@@ -1,30 +1,32 @@
-{{#each erros}}
-    <div class="alert alert-danger">{{text}}</div>
-{{else}}
+<div class="p-5 rounded-lg text-color-custom">
+    {{#each erros}}
+        <div class="alert alert-danger">{{text}}</div>
+    {{else}}
 
-{{/each}}
+    {{/each}}
 
-<div class="d-flex justify-content-center">
-    <div class="card text-center" style="width: 25rem;">
-        <div class="card-body">
-            <form accept="" method="post">
-                <div class="form-outline mb-4">
-                    <input type="text" name="nome" class="form-control" required placeholder="Nome">
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="email" name="email" class="form-control" required placeholder="Email">
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="password" name="password" class="form-control" required placeholder="Senha">                  
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="password" name="password2" class="form-control" required placeholder="Confirme sua senha">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block mb-4">Criar conta</button>
-                <div class="text-center">
-                    <p>Possui conta? <a class="text-decoration-none" href="/users/login">Fazer login</a></p>
-                </div>
-            </form>
+    <div class="d-flex justify-content-center">
+        <div class="card text-center card-custom" style="width: 25rem;">
+            <div class="card-body">
+                <form accept="" method="post">
+                    <div class="form-outline mb-4">
+                        <input type="text" name="nome" class="form-control form-custom" required placeholder="Nome">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="email" name="email" class="form-control form-custom" required placeholder="Email">
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" name="password" class="form-control form-custom" required placeholder="Senha">                  
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" name="password2" class="form-control form-custom" required placeholder="Confirme sua senha">
+                    </div>
+                    <button type="submit" class="btn btn-block mb-4 btn-custom">Criar conta</button>
+                    <div class="text-center">
+                        <p>Possui conta? <a class="text-decoration-none" href="/users/login">Fazer login</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

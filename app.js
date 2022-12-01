@@ -13,15 +13,22 @@ require('./models/Posts')
 const Post = mongoose.model('posts')
 require('./models/Categorie')
 const Categorie = mongoose.model('categories')
+require('./models/Saves')
+const Save = mongoose.model('saves')
 const users = require('./routes/user')
 const passport = require('passport')
 require('./config/auth')(passport)
 //const db = require("./config/db")
 
 // Configurações
+if(process.env.NODE_ENV == "production"){
+    mongoURI = process.env.accessKey
+}else {
+    mongoURI = "mongodb://localhost/blogapp"
+}
 
 // Variáveis de ambiente
-const mongoURI = process.env.accessKey
+
 
 // Sessão
 app.use(session({
@@ -127,6 +134,23 @@ app.get('/categories/:slug',(req,res) => {
         req.flash('error_msg', 'Houve um erro ao carregar a página dessa categoria')
         res.redirect('/')
     })
+})
+
+app.post('/saves/new', (req,res) => {
+
+    const newSave = {
+        user: req.params.user,
+        post: req.params.post
+    }
+    console.log(newSave);
+    new Save(newSave).save().then(() => {
+        req.flash('success_msg','Publicação salva com sucesso!')
+        res.redirect('/')
+    }).catch((err) => {
+        req.flash('error_msg', 'Não foi possível salvar a publicação' + err)
+        res.redirect('/')
+    })
+
 })
 
 app.get('/404', (req,res) => {

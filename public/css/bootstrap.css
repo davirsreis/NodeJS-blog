@@ -10878,3 +10878,68 @@ textarea.form-control-lg {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
+
+.custom-nav {
+  color: #D9D9D9;
+}
+
+.custom-nav:hover {
+  color: #777777
+}
+
+.text-color-custom {
+  color: #D9D9D9;
+}
+
+.title-custom {
+  font-size: 26px; 
+  font-weight: bold;
+}
+
+.title-post-custom {
+  font-size: 34px; 
+  font-weight: bold;
+}
+
+.desc-custom {
+  font-size: 18px;
+}
+
+.btn-custom {
+  text-decoration: none; 
+  background-color: #363636;
+  color: #D9D9D9;
+}
+
+.btn-custom:hover {
+  color: #363636;
+  background-color: #D9D9D9;
+}
+
+.card-custom {
+  background-color: #121212;
+  border: none;
+}
+
+.form-custom {
+  background-color:#121212;
+  color: #D9D9D9;
+}
+
+.form-custom:active, .form-custom:focus {
+  background-color:#121212;
+  color: #D9D9D9;
+}
+
+.list-title-custom {
+  font-size: 22px; 
+  font-weight: bold;
+}
+
+.list-desc-custom {
+  font-size: 14px;
+}
+
+.small-custom {
+  font-size: 12px;
+}

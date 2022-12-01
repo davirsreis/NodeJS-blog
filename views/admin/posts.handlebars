@@ -1,22 +1,27 @@
-<h2>Lista de publicações: </h2>
-<hr>
-<div class="text-center">
-    <a href="/admin/posts/add"><button class="btn btn-primary">Adicionar publicação</button></a>
-</div>
-
-{{#each posts}}
-    <div class="card mt-4 mb-4">
-        <div class="card-body">
-            <h4>{{titulo}}</h4>
-            <p>Descrição: {{description}}</p>
-            <p>{{content}}</p>
-            <small>Data: {{date}}</small><br>
-            <small>Categoria: {{categorie.nome}}</small><br>
-            <a href="/admin/posts/edit/{{id}}"><button class="btn btn-success mt-3">Editar publicação</button></a>
-            <a href="/admin/posts/delete/{{id}}"><button class="btn btn-danger mt-3">Deletar publicação</button></a>
-
-        </div>
+<div class="p-5 rounded-lg text-color-custom">
+    <h2 class="title-post-custom text-center">Publicações</h2>
+    <hr class="my-4">
+    <div class="text-center">
+        <a href="/admin/posts/add"><button class="btn btn-custom">Nova publicação</button></a>
     </div>
-{{else}}
-    <p>Nenhuma publicação registrada</p>
-{{/each}}
+
+    {{#each posts}}
+        <div class="card mt-4 mb-4 card-custom">
+            <div class="card-body">
+                <h4 class="list-title-custom">Título: {{titulo}}</h4>
+                <p class="list-desc-custom">Descrição: {{description}}</p>
+                <p class="list-desc-custom">Conteúdo: {{content}}</p>
+                <small class="small-custom">Data: {{date}}</small><br>
+                <small class="small-custom">Categoria: {{categorie.nome}}</small><br>
+                <div class="d-flex justify-content-between mt-3">
+                    <a href="/admin/posts/edit/{{id}}"><button class="btn btn-success mt-3">Editar publicação</button></a>
+                    <a href="/admin/posts/delete/{{id}}"><button class="btn btn-danger mt-3">Deletar publicação</button></a>
+                </div>
+                <hr class="my-5">
+            </div>
+        </div>
+    {{else}}
+        <p>Nenhuma publicação registrada</p>
+    {{/each}}
+</div>
+    
