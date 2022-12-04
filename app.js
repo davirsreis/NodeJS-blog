@@ -127,11 +127,11 @@ app.get('/categories/:slug',(req,res) => {
                 res.redirect('/')
             })
         }else{
-            res.flash('error_msg', 'Essa categoria não existe')
+            req.flash('error_msg', 'Essa categoria não existe')
             res.redirect('/')
         }
     }).catch((err) => {
-        req.flash('error_msg', 'Houve um erro ao carregar a página dessa categoria')
+        req.flash('error_msg', 'Houve um erro ao carregar a página dessa categoria' + err)
         res.redirect('/')
     })
 })

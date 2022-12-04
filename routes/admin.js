@@ -37,6 +37,10 @@ router.post('/categories/new', eAdmin, (req,res) => {
         erros.push({text: "Slug inválido"})
     }
 
+    if(!req.body.description || typeof req.body.description == undefined || req.body.description == null){
+        erros.push({text: "Descrição inválida"})
+    }
+
     if(req.body.nome.length < 2){
         erros.push({text: "O nome da categoria é pequeno demais"})
     }
@@ -50,7 +54,8 @@ router.post('/categories/new', eAdmin, (req,res) => {
     }else {
         const newCategorie = {
             nome: req.body.nome,
-            slug: req.body.slug
+            slug: req.body.slug,
+            description: req.body.description
         }
     
         new Categorie(newCategorie).save().then(() => {
@@ -85,6 +90,10 @@ router.post('/categories/edit', eAdmin, (req,res) => {
         erros.push({text: "Slug inválido"})
     }
 
+    if(!req.body.description || typeof req.body.description == undefined || req.body.description == null){
+        erros.push({text: "Descrição inválida"})
+    }
+
     if(req.body.nome.length < 2){
         erros.push({text: "O nome da categoria é pequeno demais"})
     }
@@ -104,6 +113,7 @@ router.post('/categories/edit', eAdmin, (req,res) => {
         Categorie.findOne({_id: req.body.id}).then((categorie) => {
             categorie.nome = req.body.nome
             categorie.slug = req.body.slug
+            categorie.description = req.body.description
             categorie.save().then(() => {
                 req.flash('success_msg', 'Categoria editada com sucesso')
                 res.redirect('/admin/categories')
@@ -200,6 +210,7 @@ router.post('/posts/new', eAdmin, (req,res) => {
         const newPost = {
             titulo: req.body.titulo,
             description: req.body.description,
+            author: "Beatriz Mateus",
             content: req.body.content,
             categorie: req.body.categorie,
             slug: req.body.slug
@@ -208,7 +219,7 @@ router.post('/posts/new', eAdmin, (req,res) => {
             req.flash('success_msg','Publicação criada com sucesso!')
             res.redirect('/admin/posts')
         }).catch((err) => {
-            req.flash('error_msg', 'Houve um erro durante o salvamento da publicação')
+            req.flash('error_msg', 'Houve um erro durante o salvamento da publicação:')
             res.redirect('/admin/posts')
         })
     }
@@ -274,6 +285,7 @@ router.post('/post/edit', eAdmin, (req,res) => {
             post.titulo = req.body.titulo
             post.slug = req.body.slug
             post.description = req.body.description
+            post.author = "Beatriz Mateus",
             post.content = req.body.content
             post.categorie = req.body.categorie
     

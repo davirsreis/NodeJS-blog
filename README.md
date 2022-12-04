@@ -4,12 +4,13 @@
 Blog interativo com conteúdos de direito. Permite a autenticação de usuários, visualização e salvamento de publicações.
 
 ## Tecnologias utilizadas
-* Node 16.17.1
+* Express v4.18.1
+* Express-Handlebars v6.0.6
 * Bootstrap v5.2.2
-* Handlebars
+
 
 ## Link da aplicação
-https://blooming-dawn-58705.herokuapp.com/
+(direito-blog.herokuapp.com/)[https://direito-blog.herokuapp.com/]
 
-## Autores
+## Autor
 Davi Resende Silveira Reis

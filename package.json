@@ -13,8 +13,8 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
   },
-  "name": "nodejs-blog",
-  "description": "Repositório para a prática de um curso de NodeJS",
+  "name": "direito-blog",
+  "description": "Blog de direito em NodeJS",
   "version": "1.0.0",
   "main": "app.js",
   "engines": {

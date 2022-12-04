@@ -10903,6 +10903,7 @@ textarea.form-control-lg {
 
 .desc-custom {
   font-size: 18px;
+  text-align: justify;
 }
 
 .btn-custom {
@@ -10942,4 +10943,12 @@ textarea.form-control-lg {
 
 .small-custom {
   font-size: 12px;
+}
+
+.lead {
+  text-align: justify;
+}
+
+.post-content-custom {
+  text-align: justify;
 }
