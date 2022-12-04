@@ -10939,6 +10939,7 @@ textarea.form-control-lg {
 
 .list-desc-custom {
   font-size: 14px;
+  text-align: justify;
 }
 
 .small-custom {
