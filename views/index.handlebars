@@ -11,9 +11,12 @@
         <div class="card-body">
             <div class="btn-group d-flex justify-content-between">
                 <h3 class="title-custom">{{titulo}}</h3>
+                {{#if user}}
                 <form action="/saves/new/{{id}}" method="POST">
                     <button type="submit" style="background-color: #121212; border: none;"><img alt="logo" width="30px" class="" style="background-color: #121212;" src="https://papik.pro/uploads/posts/2022-08/thumbs/1661459344_19-papik-pro-p-beloe-serdtse-stiker-png-19.png"></button>
                 </form>
+                {{else}}
+                {{/if}}
             </div>
             <p class="desc-custom">{{description}}</p>
             <a href="/post/{{slug}}"><button class="btn text-color-custom btn-custom">Leia mais</button></a>
