@@ -10,7 +10,7 @@ Blog interativo com conteúdos de direito. Permite a autenticação de usuários
 
 
 ## Link da aplicação
-(direito-blog.herokuapp.com/)[https://direito-blog.herokuapp.com/]
+[direito-blog.herokuapp.com/](https://direito-blog.herokuapp.com/)
 
 ## Autor
 Davi Resende Silveira Reis
