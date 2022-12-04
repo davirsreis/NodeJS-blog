@@ -16,7 +16,8 @@ const Categorie = mongoose.model('categories')
 require('./models/Saves')
 const Save = mongoose.model('saves')
 const users = require('./routes/user')
-const passport = require('passport')
+const passport = require('passport');
+const { post } = require("./routes/admin");
 require('./config/auth')(passport)
 //const db = require("./config/db")
 
@@ -136,11 +137,11 @@ app.get('/categories/:slug',(req,res) => {
     })
 })
 
-app.post('/saves/new', (req,res) => {
+app.post('/saves/new/:_id', (req,res) => {
 
     const newSave = {
-        user: req.params.user,
-        post: req.params.post
+        user: req.user._id,
+        post: req.params._id
     }
     console.log(newSave);
     new Save(newSave).save().then(() => {
