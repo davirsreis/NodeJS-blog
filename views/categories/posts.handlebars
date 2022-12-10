@@ -2,15 +2,15 @@
     <h1>{{categorie.nome}}</h1>
 
     {{#each posts}}
-    <div class="card card-custom">
+    <div class="card card-custom mt-5">
         <div class="card-body">
-            <h3 class="mt-5 title-custom">{{titulo}}</h3>
+            <h3 class="title-custom">{{titulo}}</h3>
             <p class="desc-custom">{{description}}</p>
             <a href="/post/{{slug}}"><button class="btn btn-custom">Leia mais</button></a>
             <hr>
             <div class="d-flex justify-content-between">
-                <small>Data de publicação: {{date}}</small>
-                <small>Autor(a): {{author}}</small>
+                <small class="small-custom">Data de publicação: {{date}}</small>
+                <small class="small-custom">Autor(a): {{author}}</small>
             </div>
         </div>
     </div>
