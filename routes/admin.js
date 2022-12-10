@@ -12,7 +12,7 @@ router.get('/', eAdmin, (req, res) => {
 })
 
 router.get('/categories', eAdmin, (req,res) => {
-    Categorie.find().sort({date:'desc'}).then((categories) => {
+    Categorie.find().sort({date2:'desc'}).then((categories) => {
         res.render('admin/categories', {categories: categories})
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao listar as categorias")
@@ -152,7 +152,7 @@ router.get('/categories/delete/:id', eAdmin, (req,res) => {
 })
 
 router.get('/posts', eAdmin, (req,res) => {
-    Post.find().populate('categorie').sort({date:'desc'}).then((posts) => {
+    Post.find().populate('categorie').sort({date2:'desc'}).then((posts) => {
         res.render('admin/posts', {posts: posts})
     }).catch((err) => {
         req.flash('error_msg', 'Houve um erro ao listar as postagens' + err)

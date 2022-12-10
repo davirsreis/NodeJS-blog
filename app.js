@@ -87,7 +87,7 @@ app.use(express.static(path.join(__dirname,'public')))
 
 // Rotas
 app.get('/', (req,res) => {
-    Post.find().populate('categorie').sort({date: 'desc'}).then((posts) => {
+    Post.find().populate('categorie').sort({date2: 'desc'}).then((posts) => {
         res.render('index', {posts: posts})
     }).catch((err) => {
         req.flash('error_msg', 'Houve um erro interno')
@@ -110,7 +110,7 @@ app.get('/post/:slug', (req,res) => {
 })
 
 app.get('/categories', (req,res) => {
-    Categorie.find().sort({date:'desc'}).then((categories) => {
+    Categorie.find().sort({date2:'desc'}).then((categories) => {
         res.render('categories/index', {categories: categories})
     }).catch((err) => {
         req.flash('error_msg', 'Houve um erro ao listar as categorias')
@@ -138,8 +138,8 @@ app.get('/categories/:slug',(req,res) => {
 })
 
 // app.get('/saves', (req,res) => {
-//     Save.find({save: req.user._id}).sort({date:'desc'}).then((saves) => {
-//         Post.find({post: saves.post}).sort({date:'desc'}).then((posts) => {
+//     Save.find({save: req.user._id}).sort({date2:'desc'}).then((saves) => {
+//         Post.find({post: saves.post}).sort({date2:'desc'}).then((posts) => {
 //             res.render('saves/index', {saves: saves, posts: posts})
 //         })
 //     })

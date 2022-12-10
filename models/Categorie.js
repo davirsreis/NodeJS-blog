@@ -17,6 +17,10 @@ const Categorie = new Schema({
     date: {
         type: String,
         default: Date.now()
+    },
+    date2: {
+        type: String,
+        default: Date.now()
     }
 })
 
