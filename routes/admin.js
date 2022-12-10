@@ -321,27 +321,30 @@ router.get('/posts/delete/:id', eAdmin, (req,res) => {
 
 function todayDate() {
     const today = new Date(Date.now())
-    day = today.getDate()
-    if(day < 10) {
-        day = ("0"+day)
-    }
     month = today.getMonth()+1
-    if(month < 10) {
-        month = ("0"+month)
-    }
+    day = today.getDate()
     year = today.getFullYear()
     hours = today.getHours()
     if(hours >= 3) {
         hours = hours-3
     } else if(hours == 2) {
         hours = 23
+        day = day -1
     } else if(hours == 1) {
         hours = 22
+        day = day -1
     } else if(hours == 0) {
         hours = 21
+        day = day -1
     }
     if(hours < 10) {
         hours = ("0"+hours)
+    }
+    if(day < 10) {
+        day = ("0"+day)
+    }
+    if(month < 10) {
+        month = ("0"+month)
     }
     minutes = today.getMinutes()
     return dateNow = (day+"/"+month+"/"+year+" - "+hours+":"+minutes)
