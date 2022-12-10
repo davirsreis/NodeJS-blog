@@ -55,14 +55,17 @@ router.post('/categories/new', eAdmin, (req,res) => {
         const newCategorie = {
             nome: req.body.nome,
             slug: req.body.slug,
-            description: req.body.description
+            description: req.body.description,
+            date: todayDate()
         }
-    
         new Categorie(newCategorie).save().then(() => {
+            const timeElapsed = Date.now();
+            const today = new Date(timeElapsed);
             req.flash('success_msg', 'Categoria criada com sucesso!')
+            console.log();
             res.redirect('/admin/categories')
         }).catch((err) => {
-            req.flash('error_msg', 'Houve um erro ao cadastrar a categoria, tente novamente.')
+            req.flash('error_msg', 'Houve um erro ao cadastrar a categoria, tente novamente.'+ err)
             res.redirect('/admin')
         })
     }
@@ -213,7 +216,8 @@ router.post('/posts/new', eAdmin, (req,res) => {
             author: "Beatriz Mateus",
             content: req.body.content,
             categorie: req.body.categorie,
-            slug: req.body.slug
+            slug: req.body.slug,
+            date: todayDate()
         }
         new Post(newPost).save().then(() => {
             req.flash('success_msg','Publicação criada com sucesso!')
@@ -314,5 +318,24 @@ router.get('/posts/delete/:id', eAdmin, (req,res) => {
         res.redirect('/admin/posts')
     })
 })
+
+function todayDate() {
+    const today = new Date(Date.now())
+    day = today.getDate()
+    if(day < 10) {
+        day = ("0"+day)
+    }
+    month = today.getMonth()+1
+    if(month < 10) {
+        month = ("0"+month)
+    }
+    year = today.getFullYear()
+    hours = today.getHours()
+    if(hours < 10) {
+        hours = ("0"+hours)
+    }
+    minutes = today.getMinutes()
+    return dateNow = (day+"/"+month+"/"+year+" - "+hours+":"+minutes)
+}
 
 module.exports = router

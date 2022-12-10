@@ -15,7 +15,7 @@ const Categorie = new Schema({
         require: true
     },
     date: {
-        type: Date,
+        type: String,
         default: Date.now()
     }
 })
