@@ -325,6 +325,7 @@ function todayDate() {
     day = today.getDate()
     year = today.getFullYear()
     hours = today.getHours()
+    minutes = today.getMinutes()
     if(hours >= 3) {
         hours = hours-3
     } else if(hours == 2) {
@@ -337,6 +338,9 @@ function todayDate() {
         hours = 21
         day = day -1
     }
+    if(minutes < 10) {
+        minutes = ("0"+minutes)
+    }
     if(hours < 10) {
         hours = ("0"+hours)
     }
@@ -346,7 +350,6 @@ function todayDate() {
     if(month < 10) {
         month = ("0"+month)
     }
-    minutes = today.getMinutes()
     return dateNow = (day+"/"+month+"/"+year+" - "+hours+":"+minutes)
 }
 
