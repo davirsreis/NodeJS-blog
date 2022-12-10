@@ -137,8 +137,19 @@ app.get('/categories/:slug',(req,res) => {
     })
 })
 
-app.post('/saves/new/:_id', (req,res) => {
+// app.get('/saves', (req,res) => {
+//     Save.find({save: req.user._id}).sort({date:'desc'}).then((saves) => {
+//         Post.find({post: saves.post}).sort({date:'desc'}).then((posts) => {
+//             res.render('saves/index', {saves: saves, posts: posts})
+//         })
+//     })
+//    .catch((err) => {
+//         req.flash('error_msg', 'Houve um erro ao listar as categorias' + err)
+//         res.redirect('/')
+//     })
+// })
 
+app.post('/saves/new/:_id', (req,res) => {
     const newSave = {
         user: req.user._id,
         post: req.params._id

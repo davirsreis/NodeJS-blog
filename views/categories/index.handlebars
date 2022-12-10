@@ -1,14 +1,13 @@
 <div class="card-body text-color-custom p-5">
-    <h1>Categorias: </h1>
+    <h1 class="h1-custom">Categorias: </h1>
     <ul class="list-group mt-5">
         {{#each categories}}
-        <li class="list-group-item card-custom">
-            <a href="/categories/{{slug}}" class="custom-nav text-decoration-none"><h5>{{nome}}</h5></a>
-            <small class="text-color-custom">{{description}}</small>
+        <li class="list-group-item card-custom mt-4">
+            <a href="/categories/{{slug}}" class="custom-nav text-decoration-none"><h3 class="title-custom">{{nome}}</h3></a>
+            <small class="text-color-custom desc-custom">{{description}}</small>
         </li>
-        <hr class="my-4">
         {{else}}
-            <h5>Nenhuma categoria registrada</h5>
+            <h3 class="title-custom">Nenhuma categoria registrada</h3>
         {{/each}}
     </ul>  
 

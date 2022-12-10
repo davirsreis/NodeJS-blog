@@ -11,8 +11,8 @@
                 <div class="card-body">
                     <form action="/admin/categories/edit" method="POST">
                         <input type="hidden" name="id" value="{{categorie._id}}">
-                            <input type="text" id="nome" name="nome" placeholder="Nome da categoria" class="form-control mb-2 form-custom" value="{{categorie.nome}}">
-                            <input type="text" id="slug" name="slug" placeholder="Slug da categoria" class="form-control form-custom" value="{{categorie.slug}}">
+                            <input type="text" id="nome" name="nome" placeholder="Nome da categoria" class="form-control form-custom mb-2 " value="{{categorie.nome}}">
+                            <input type="text" id="slug" name="slug" placeholder="Slug da categoria" class="form-control form-custom mb-2" value="{{categorie.slug}}">
                             <input type="text" id="description" name="description" placeholder="Descrição da categoria" class="form-control form-custom" value="{{categorie.description}}">
                             <br>
                         <button type="submit" class="btn btn-success">Editar categoria</button>

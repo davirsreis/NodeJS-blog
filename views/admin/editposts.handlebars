@@ -11,10 +11,10 @@
             <div class="card-body">
                 <form action="/admin/post/edit" method="POST">
                     <input type="hidden" value="{{post._id}}" name="id">
-                    <input type="text" id="titulo" name="titulo" placeholder="Titulo da publicação" class="form-control mb-2 form-custom" value="{{post.titulo}}">
-                    <input type="text" id="slug" name="slug" placeholder="Slug da categoria" class="form-control mb-2 form-custom" value="{{post.slug}}">
-                    <input type="text" id="description" name="description" placeholder="Descrição" class="form-control mb-2 form-custom" value="{{post.description}}">
-                    <textarea name="content" class="form-control mb-2 form-custom">{{post.content}}</textarea>
+                    <input type="text" id="titulo" name="titulo" placeholder="Titulo da publicação" class="form-control form-custom mb-2" value="{{post.titulo}}">
+                    <input type="text" id="slug" name="slug" placeholder="Slug da categoria" class="form-control form-custom mb-2" value="{{post.slug}}">
+                    <input type="text" id="description" name="description" placeholder="Descrição" class="form-control form-custom mb-2" value="{{post.description}}">
+                    <textarea name="content" class="form-control form-custom mb-2">{{post.content}}</textarea>
                     <select name="categorie" class="form-select form-custom">
                         {{#each categories}}
                         <option value="{{_id}}">{{nome}}</option>
