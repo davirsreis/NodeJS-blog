@@ -333,6 +333,15 @@ function todayDate() {
     hours = today.getHours()
     if(hours < 10) {
         hours = ("0"+hours)
+        if(hours >= 3) {
+            hours = hours-3
+        } else if(hours == 2) {
+            hours = 23
+        } else if(hours == 1) {
+            hours = 22
+        } else if(hours == 0) {
+            hours = 21
+        }
     }
     minutes = today.getMinutes()
     return dateNow = (day+"/"+month+"/"+year+" - "+hours+":"+minutes)
